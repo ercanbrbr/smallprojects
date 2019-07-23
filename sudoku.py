@@ -91,7 +91,11 @@ def generateSudoku():
                 sudoku=deleteRow(x,sudoku)
                 y=0
 
-    for i in sudoku:
-        print(i)
+    return sudoku
 
-generateSudoku()
+def generatePuzzle():
+    sudoku=generateSudoku()
+    for i in range(random.randint(30,45)):
+        sudoku[random.randint(0,8)][random.randint(0,8)]=None
+    return sudoku
+
