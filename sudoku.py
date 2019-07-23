@@ -93,9 +93,10 @@ def generateSudoku():
 
     return sudoku
 
-def generatePuzzle():
-    sudoku=generateSudoku()
-    for i in range(random.randint(30,45)):
-        sudoku[random.randint(0,8)][random.randint(0,8)]=None
-    return sudoku
-
+def generatePuzzle(matris):
+    temp=[]
+    temp=matris.copy()
+    for i in range(random.randint(50,60)):
+        temp[random.randint(0,8)][random.randint(0,8)]=None
+    
+    return temp
