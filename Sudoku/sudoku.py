@@ -93,10 +93,17 @@ def generateSudoku():
 
     return sudoku
 
-def generatePuzzle(matris):
+def generatePuzzle(matris,zorluk):
     temp=[]
     temp=matris.copy()
-    for i in range(random.randint(50,60)):
-        temp[random.randint(0,8)][random.randint(0,8)]=None
+    if zorluk==1:
+        for i in range(random.randint(15,20)):
+            temp[random.randint(0,8)][random.randint(0,8)]=None
+    elif zorluk==2:
+        for i in range(random.randint(30,45)):
+            temp[random.randint(0,8)][random.randint(0,8)]=None
+    elif zorluk==3:
+        for i in range(random.randint(50,65)):
+            temp[random.randint(0,8)][random.randint(0,8)]=None
     
     return temp
