@@ -1,4 +1,4 @@
-from tkinter import messagebox, Tk, Canvas, ALL
+from tkinter import messagebox, Tk, Canvas, ALL,LEFT,RIGHT,TOP,Label,Button
 #from tkinter import *
 #from tkinter import messagebox
 import sudoku
@@ -33,9 +33,37 @@ class grids:
             self.can.create_text(25,25,text=self.number,fill="brown",font="Times 20")
             if puzzle==answer:
                 messagebox.showinfo("","Kazandınız!")
+                root.destroy()
             # print(puzzle)
         
-        
+
+def bfunction1():
+    global ZORLUK
+    ZORLUK=1
+    root2.destroy()
+def bfunction2():
+    global ZORLUK
+    ZORLUK=2
+    root2.destroy()
+def bfunction3():
+    global ZORLUK
+    ZORLUK=3
+    root2.destroy()
+    
+    
+#region Zorluk Penceresi
+root2=Tk()
+lb1=Label(root2,text="Zorluk Seçiniz")
+lb1.pack(side=TOP)
+bt1=Button(root2,text="Kolay",width=15,height=3,command=bfunction1)
+bt1.pack(side=LEFT)
+bt2=Button(root2,text="Orta",width=15,height=3,command=bfunction2)
+bt2.pack(side=LEFT)
+bt3=Button(root2,text="Zor",width=15,height=3,command=bfunction3)
+bt3.pack(side=LEFT)
+root2.mainloop()
+#endregion
+
 
 #region Sudoku çözümlü ve çözümsüz hali
 answer=sudoku.generateSudoku()
@@ -44,14 +72,15 @@ for i in range(len(answer)):
     puzzle.append([])
     for j in range(len(answer[0])):
         puzzle[i].append(answer[i][j])
-puzzle=sudoku.generatePuzzle(puzzle)
+puzzle=sudoku.generatePuzzle(puzzle,ZORLUK)
 print(answer)
 print(puzzle)
 #endregion
 
-#region tkinter
+#region Oyun Penceresi
 root=Tk()
 root.configure(background="Black")
+
 b=[]
 for Y in range(9):
     for X in range(9):
