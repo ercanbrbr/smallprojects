@@ -11,7 +11,7 @@ def ms(): #9x9luk alan açıyor
     matris=[]
     for i in range(9):
         matris.append([])
-        for y in range(9):
+        for _ in range(9):
             matris[i].append(0)
     return matris
 
@@ -97,13 +97,13 @@ def generatePuzzle(matris,zorluk):
     temp=[]
     temp=matris.copy()
     if zorluk==1:
-        for i in range(random.randint(15,20)):
+        for _ in range(random.randint(15,20)):
             temp[random.randint(0,8)][random.randint(0,8)]=None
     elif zorluk==2:
-        for i in range(random.randint(30,45)):
+        for _ in range(random.randint(30,45)):
             temp[random.randint(0,8)][random.randint(0,8)]=None
     elif zorluk==3:
-        for i in range(random.randint(50,65)):
+        for _ in range(random.randint(50,65)):
             temp[random.randint(0,8)][random.randint(0,8)]=None
     
     return temp
