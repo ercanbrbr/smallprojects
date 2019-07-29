@@ -110,10 +110,6 @@ print(puzzle)
 #region Oyun Penceresi
 root=Tk()
 root.configure(background="Black")
-# b=[]
-# for Y in range(9):
-#     for X in range(9):
-#         b.append(grids(puzzle[X][Y],X,Y,answer[X][Y]))
 Anaoyun=sudoku9x9(puzzle,answer)
 root.mainloop()
 #endregion
